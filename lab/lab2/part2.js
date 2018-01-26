@@ -26,6 +26,13 @@ Calculate the value by using _.countBy and set your answer to variable "largeSta
 
 var data = bikeArrayClean;
 
-var largeStationList;
+var largeStationList = _.filter(bikeArrayClean, function(arr){ return arr[3] > 20; });
 
-var largeStationCount;
+var largeStationCount = _.countBy(bikeArrayClean, function(arr){ return arr[3] > 20  ? 'Large Bike Share Locations': 'Small Bike Share Locations'; });
+
+console.log("Task 1 Answer: ");
+console.log(largeStationList);
+
+console.log("Task 2 Answer: ");
+console.log(largeStationCount);
+console.log("There are " + largeStationCount["Large Bike Share Locations"] + " bike stations with more than 20 docks.");
